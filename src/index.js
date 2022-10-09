@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter } from 'react-router-dom';
 // 1
 import {
   ApolloProvider,
@@ -14,7 +14,7 @@ import {
 
 // 2
 const httpLink = createHttpLink({
-  uri: 'http://localhost:8080'
+  uri: 'http://localhost:8000/graphql/'
 });
 
 // 3
@@ -34,11 +34,11 @@ ReactDOM.render(
 */
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ApolloProvider client={client}>
+<ApolloProvider client={client}>
   <React.StrictMode>
     <App />
   </React.StrictMode>
-  </ApolloProvider>,
+</ApolloProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
